@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* { box-sizing: border-box; }
+body { margin: 0; color: #eef5ff; background: #080b16; font-family: Arial, "Microsoft YaHei", sans-serif; min-height: 100vh; }
+body:before { content:""; position:fixed; inset:0; pointer-events:none; background: radial-gradient(circle at 15% 5%, rgba(63,91,162,.22), transparent 32%), radial-gradient(circle at 85% 80%, rgba(126,75,154,.15), transparent 30%); }
+.glass { background: rgba(18,25,45,.68); backdrop-filter: blur(18px); border: 1px solid rgba(180,211,255,.15); box-shadow: 0 20px 50px rgba(0,0,0,.22); }
+.glow { box-shadow: 0 0 0 1px rgba(102,230,255,.3), 0 0 26px rgba(102,230,255,.16); }
+.enter { animation: enter .45s ease-out both; } @keyframes enter { from { opacity:0; transform: translateY(14px) } to { opacity:1; transform:none } }
+.pulse-bar { animation: pulse 1s ease-in-out infinite alternate; } @keyframes pulse { to { transform: scaleY(1.75); opacity:.45 } }
+.correct { animation: correct .5s ease; } .wrong { animation: wrong .5s ease; } .unknown { animation: unknown .5s ease; }
+@keyframes correct { 50% { background:#1c754f; box-shadow:0 0 35px #42e88a } } @keyframes wrong { 50% { background:#862b45; box-shadow:0 0 35px #ff507d } } @keyframes unknown { 50% { background:#536074 } }

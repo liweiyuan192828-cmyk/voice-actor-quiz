@@ -1,0 +1,2 @@
+import Link from "next/link";
+export function Logo() { return <Link href="/" className="group inline-flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl border border-cyan/40 bg-cyan/10 text-xl shadow-glow">◈</span><span><b className="block tracking-[.18em]">声优鉴定局</b><small className="text-[9px] tracking-[.25em] text-cyan/80">VOICE ACTOR QUIZ</small></span></Link>; }

@@ -1,0 +1,3 @@
+import { NextRequest, NextResponse } from "next/server";
+import { adminSupabase } from "@/lib/supabase";
+export async function GET(req: NextRequest) { try { const category = req.nextUrl.searchParams.get("category"); let query = adminSupabase().from("questions").select("*").eq("is_active", true).order("created_at", { ascending:false }); if (category && category !== "综合") query = query.eq("category", category); const { data, error } = await query; if (error) throw error; return NextResponse.json(data); } catch (e) { return NextResponse.json({ error: e instanceof Error ? e.message : "题库读取失败" }, { status: 500 }); } }
